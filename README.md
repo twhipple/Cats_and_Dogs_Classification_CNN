@@ -9,6 +9,7 @@
 ## Intro
 My first CNN using color images. The idea is to build a model that can recognize the difference between cat and dog images.
 
+10000 .jpg image files - 217.23 MB. Broken up into a Training set (8000 images) and a Testing set (2000 images). Each of these sets are split evenly into a Cats folder and a Dogs folder. 
 
 
 ## README Outline
@@ -22,52 +23,43 @@ My first CNN using color images. The idea is to build a model that can recognize
 
 ![](https://raw.githubusercontent.com/twhipple/Cats_and_Dogs_Classification_CNN/main/Images/SequentialModelSummary.png)
 
-*Sample of handwritten digits from the MNIST dataset.*
+*Summary of my Sequential CNN model.*
 
 
 ## Repo Contents
 This repo contains the following:
 * README.md - this is where you are now!
-* Notebook.ipynb - the Jupyter Notebook containing the finalized code for this project.
+* Cats_Dogs_Classification_Notebook.ipynb - the Jupyter Notebook containing the finalized code for this project.
 * LICENSE.md - the required license information.
-* dataset - the dataset can be found in the scikit-learn datasets and is not a separate file.
+* DATA - the dataset can be found on Kaggle: https://www.kaggle.com/chetankv/dogs-cats-images
 * CONTRIBUTING.md
-* Images
+* IMAGES
 
 
 ## Libraries & Prerequisites
 These are the libraries that I used in this project.
 
-* import numpy as np
-* import pandas as pd
-* import random as rn
-* Tensorflow
-* import tensorflow.random as tfr
-* import tensorflow.keras as keras
-* from tensorflow.keras.models import Sequential, load_model
-* from tensorflow.keras.layers import Dense, Dropout, Flatten
-* from tensorflow.keras.layers import Conv2D, MaxPool2D, MaxPooling2D, BatchNormalization
-* from tensorflow.keras import backend as K
-* from tensorflow.keras.utils import to_categorical
-* from tensorflow.keras.optimizers import RMSprop, Adam
-* from tensorflow.keras.preprocessing.image import ImageDataGenerator
-* from tensorflow.keras.callbacks import EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
-* Chart
-* import matplotlib.pyplot as plt
-* import matplotlib.image as mpimg
-* import seaborn as sns
-* from sklearn.metrics import classification_report
-* from PIL import Image
+* import numpy as np 
+* import matplotlib.pyplot as plt 
 * import os
-* import cv2
+* from PIL import Image
+* Keras Libraries
+* import keras
+* from keras.models import Sequential
+* from keras.layers import Conv2D
+* from keras.layers import MaxPooling2D
+* from keras.layers import Flatten
+* from keras.layers import Dense
+* from keras.preprocessing.image import ImageDataGenerator, load_img
+* from sklearn.metrics import classification_report, confusion_matrix
 
 
 ## Conclusions
-So the Convolutional Nueral Network did slightly better than the basic Multi-layer Perceptron NN. Both had pretty high valadation accuracy results even after only a couple Epochs.
+I tweeked the model a few different times and finally had an Accuracy: 0.8190 - I even was able to get it to recognize the image from my prediction sample. 
 
 
 ## Future Work
-With some help from my former instructor, Jeff Herman, I was finally able to get these simple models to run. I'm sure there are more parameters I could adjust, or add more layers to the perceptron in either model. It didn't seem like running more Epochs would make a difference, though I could change the batch size. I would also really like to see how this model works with additonal hand-written digits.
+As mentioned in my notebook, I had to physically manipulate the data - I split up the testing group into a Test and a Validation group. I know there is a way to do this using Python code but I couldn't figure it out or get it to work. Therefore, one thing I would like to learn in the future is how to do this. I believe there are also a number of different parameters as well as many more post model result processes that I could adjust and review (such as look at a confusion matrix, or model optimizers).
 
 
 ![](https://raw.githubusercontent.com/twhipple/Cats_and_Dogs_Classification_CNN/main/Images/TrainvsEpochs.png)
@@ -91,4 +83,4 @@ Please read LICENSE.md for details
 
 ## Acknowledgments
 Thank you to Jeff Herman for all of your support and help with code!
-Thank you to scikit-learn for the dataset.
+Thank you to kaggle and 'chetanimravan' for the dataset.
